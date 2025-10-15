@@ -1,12 +1,158 @@
 # ATS Mini Companion
 
+[🇪🇸 Español](#español) | [🇬🇧 English](#english)
+
+---
+
+## English
+
+Remote control application for the ATS Mini radio receiver via USB Serial.
+
+### Description
+
+ATS Mini Companion is an Android application developed with React, Vite, and Capacitor that allows remote control of the ATS Mini radio receiver through USB Serial connection. The application offers an intuitive ICOM-style interface to manage all receiver parameters.
+
+### Features
+
+- **Frequency Control**: Precise frequency adjustment with +/- buttons and long-press support
+- **Band Management**: Quick navigation between frequency bands
+- **Operating Modes**: Switch between different modulation modes (AM, FM, SSB, etc.)
+- **Bandwidth Control**: Adjust receiver bandwidth
+- **Step Control**: Configure tuning step
+- **AGC/Attenuator**: Automatic gain control and attenuator
+- **Volume Control**: Audio level adjustment with visual indicator
+- **Backlight Control**: Adjust receiver screen brightness
+- **Menu Access**: Direct access to receiver menu
+
+### Download
+
+**[Download APK v2.5](https://github.com/rodillo69/ATS-Mini-Companion/releases/download/v2.5/ATSMini_v2.5_debug.apk)**
+
+### Requirements
+
+- Android device with USB OTG support
+- USB OTG cable to connect the ATS Mini receiver
+- Android 7.0 or higher
+
+### Installation
+
+1. Download the APK file from the link above
+2. Enable installation from unknown sources on your Android device
+3. Install the APK
+4. Connect your ATS Mini receiver using a USB OTG cable
+5. Open the application and press "Connect" to establish the connection
+
+### Technologies Used
+
+- **React 19**: JavaScript framework for the user interface
+- **Vite 7**: High-performance build tool and bundler
+- **Capacitor 7**: Cross-platform native application framework
+- **TailwindCSS**: CSS framework for responsive design
+- **Capacitor Serial Plugin**: Plugin for USB Serial communication
+
+### Development
+
+#### Development Requirements
+
+- Node.js 18 or higher
+- Java JDK 17 (included in Android Studio)
+- Android Studio with Android SDK
+- Git
+
+#### Build from Source
+
+```bash
+# Clone the repository
+git clone https://github.com/rodillo69/ATS-Mini-Companion.git
+cd ATS-Mini-Companion
+
+# Install dependencies
+npm install
+
+# Build the web application
+npm run build
+
+# Sync with Android
+npx cap sync android
+
+# Open in Android Studio
+npx cap open android
+
+# Or build directly with Gradle
+cd android
+./gradlew assembleDebug
+```
+
+The generated APK will be in `android/app/build/outputs/apk/debug/app-debug.apk`
+
+### Project Structure
+
+```
+ats-mini-control/
+├── src/
+│   ├── components/       # React components
+│   ├── services/         # Serial communication services
+│   ├── App.jsx          # Main component
+│   └── index.css        # Global styles
+├── android/             # Native Android project
+├── public/              # Static assets
+├── capacitor.config.ts  # Capacitor configuration
+└── vite.config.js       # Vite configuration
+```
+
+### Version History
+
+#### v2.5 (Current)
+- Improved long press control for frequency buttons
+- Frequency change verification before sending next command
+- Serial communication saturation prevention
+
+#### v2.4
+- Disabled text selection throughout the application
+- Improved touch experience on mobile devices
+
+#### v2.3
+- Long press implementation with recursive control
+- Fixed command stopping issues
+
+#### v2.2
+- Long press speed adjustment to avoid serial saturation
+
+#### v2.1
+- Initial long press implementation for frequency buttons
+
+#### v2.0
+- Removed rotary VFO dial control
+- New interface with horizontal +/- buttons
+- Mobile-optimized design
+
+### License
+
+This project is under the MIT License.
+
+### Author
+
+Developed by EA5IYR - Miguel Cañadas
+
+### Contributions
+
+Contributions are welcome. Please open an issue to discuss important changes before creating a pull request.
+
+### Support
+
+If you encounter any problems or have suggestions, please open an issue in the GitHub repository.
+
+---
+
+## Español
+
 Aplicación de control remoto para el receptor de radio ATS Mini a través de USB Serial.
 
-## Descripción
+### Descripción
 
 ATS Mini Companion es una aplicación Android desarrollada con React, Vite y Capacitor que permite controlar de forma remota el receptor de radio ATS Mini mediante conexión USB Serial. La aplicación ofrece una interfaz intuitiva tipo ICOM para gestionar todos los parámetros del receptor.
 
-## Características
+### Características
 
 - **Control de Frecuencia**: Ajuste preciso de frecuencia con botones +/- y soporte para pulsación larga
 - **Gestión de Bandas**: Navegación rápida entre bandas de frecuencia
@@ -18,17 +164,17 @@ ATS Mini Companion es una aplicación Android desarrollada con React, Vite y Cap
 - **Control de Retroiluminación**: Ajuste del brillo de la pantalla del receptor
 - **Acceso al Menú**: Acceso directo al menú del receptor
 
-## Descarga
+### Descarga
 
 **[Descargar APK v2.5](https://github.com/rodillo69/ATS-Mini-Companion/releases/download/v2.5/ATSMini_v2.5_debug.apk)**
 
-## Requisitos
+### Requisitos
 
 - Dispositivo Android con soporte USB OTG
 - Cable USB OTG para conectar el receptor ATS Mini
 - Android 7.0 o superior
 
-## Instalación
+### Instalación
 
 1. Descarga el archivo APK desde el enlace anterior
 2. Habilita la instalación desde fuentes desconocidas en tu dispositivo Android
@@ -36,7 +182,7 @@ ATS Mini Companion es una aplicación Android desarrollada con React, Vite y Cap
 4. Conecta tu receptor ATS Mini mediante cable USB OTG
 5. Abre la aplicación y pulsa "Connect" para establecer la conexión
 
-## Tecnologías Utilizadas
+### Tecnologías Utilizadas
 
 - **React 19**: Framework JavaScript para la interfaz de usuario
 - **Vite 7**: Build tool y bundler de alto rendimiento
@@ -44,16 +190,16 @@ ATS Mini Companion es una aplicación Android desarrollada con React, Vite y Cap
 - **TailwindCSS**: Framework CSS para diseño responsive
 - **Capacitor Serial Plugin**: Plugin para comunicación USB Serial
 
-## Desarrollo
+### Desarrollo
 
-### Requisitos de desarrollo
+#### Requisitos de desarrollo
 
 - Node.js 18 o superior
 - Java JDK 17 (incluido en Android Studio)
 - Android Studio con Android SDK
 - Git
 
-### Compilar desde código fuente
+#### Compilar desde código fuente
 
 ```bash
 # Clonar el repositorio
@@ -79,7 +225,7 @@ cd android
 
 La APK generada estará en `android/app/build/outputs/apk/debug/app-debug.apk`
 
-## Estructura del Proyecto
+### Estructura del Proyecto
 
 ```
 ats-mini-control/
@@ -94,44 +240,44 @@ ats-mini-control/
 └── vite.config.js       # Configuración de Vite
 ```
 
-## Historial de Versiones
+### Historial de Versiones
 
-### v2.5 (Actual)
+#### v2.5 (Actual)
 - Mejora en el control de long press para botones de frecuencia
 - Verificación de cambio de frecuencia antes de enviar siguiente comando
 - Prevención de saturación de comunicación serial
 
-### v2.4
+#### v2.4
 - Deshabilitada la selección de texto en toda la aplicación
 - Mejoras en la experiencia táctil en dispositivos móviles
 
-### v2.3
+#### v2.3
 - Implementación de long press con control recursivo
 - Corrección de problemas de comandos que no se detenían
 
-### v2.2
+#### v2.2
 - Ajuste de velocidad en long press para evitar saturación serial
 
-### v2.1
+#### v2.1
 - Implementación inicial de long press en botones de frecuencia
 
-### v2.0
+#### v2.0
 - Eliminación del control VFO dial rotatorio
 - Nueva interfaz con botones horizontales +/-
 - Diseño optimizado para dispositivos móviles
 
-## Licencia
+### Licencia
 
 Este proyecto está bajo licencia MIT.
 
-## Autor
+### Autor
 
 Desarrollado por EA5IYR - Miguel Cañadas
 
-## Contribuciones
+### Contribuciones
 
 Las contribuciones son bienvenidas. Por favor, abre un issue para discutir cambios importantes antes de crear un pull request.
 
-## Soporte
+### Soporte
 
 Si encuentras algún problema o tienes sugerencias, por favor abre un issue en el repositorio de GitHub.
