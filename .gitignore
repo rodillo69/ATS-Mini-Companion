@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+dist/
+build/
+*.apk
+*.aab
+
+# Android
+android/app/build/
+android/app/release/
+android/.gradle/
+android/build/
+android/local.properties
+android/app/src/main/assets/public/
+android/capacitor-cordova-android-plugins/build/
+android/.idea/
+*.iml
+
+# iOS
+ios/App/build/
+ios/App/Pods/
+ios/App/App.xcworkspace/
+ios/App/App.xcodeproj/project.xcworkspace/
+
+# Capacitor
+.capacitor/
+capacitor.config.json.bak
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# AI Assistant files
+.claude/

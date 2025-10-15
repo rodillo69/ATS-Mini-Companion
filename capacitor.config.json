@@ -1,0 +1,11 @@
+{
+  "appId": "com.ea5iyr.atsmini",
+  "appName": "ATS Mini Companion",
+  "webDir": "dist",
+  "server": {
+    "cleartext": true
+  },
+  "android": {
+    "webContentsDebuggingEnabled": true
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ATS Mini Companion</string>
+    <string name="title_activity_main">ATS Mini Companion</string>
+    <string name="package_name">com.ea5iyr.atsmini</string>
+    <string name="custom_url_scheme">com.ea5iyr.atsmini</string>
+</resources>

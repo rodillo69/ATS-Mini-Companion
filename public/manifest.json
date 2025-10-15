@@ -1,0 +1,17 @@
+{
+  "name": "ATS Mini Companion",
+  "short_name": "ATS Mini",
+  "description": "Web-based control application for the ATS Mini radio receiver",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1419",
+  "theme_color": "#1a2332",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
