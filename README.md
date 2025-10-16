@@ -2,9 +2,11 @@
 
 [🇪🇸 Español](#español) | [🇬🇧 English](#english)
 
-![ats-companion-3](https://i.ibb.co/m5FHq2Hk/ats-companion-3.jpg)
-![ats-companion-2](https://i.ibb.co/vvcjqD3K/ats-companion-2.jpg)
-![ats-companion-1](https://i.ibb.co/60FcVWw8/ats-companion-1.jpg)
+<p align="center">
+  <img src="https://i.ibb.co/m5FHq2Hk/ats-companion-3.jpg" alt="ats-companion-3" width="300"/>
+  <img src="https://i.ibb.co/vvcjqD3K/ats-companion-2.jpg" alt="ats-companion-2" width="300"/>
+  <img src="https://i.ibb.co/60FcVWw8/ats-companion-1.jpg" alt="ats-companion-1" width="300"/>
+</p>
 
 ---
 
