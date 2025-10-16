@@ -148,6 +148,16 @@ Contributions are welcome. Please open an issue to discuss important changes bef
 
 If you encounter any problems or have suggestions, please open an issue in the GitHub repository.
 
+### Acknowledgments
+
+This project is a companion application for the **ATS Mini** radio receiver, an amazing open-source project by the ESP32-SI4732 community.
+
+**ATS Mini Radio Receiver:**
+- 📻 [ATS Mini Official Documentation](https://esp32-si4732.github.io/ats-mini/index.html)
+- 🔧 [ATS Mini GitHub Repository](https://github.com/ESP32-SI4732/ATS-Mini)
+
+Special thanks to the ATS Mini development team for creating such an excellent and hackable radio receiver platform. This application wouldn't be possible without their outstanding work on the hardware and firmware.
+
 ---
 
 ## Español
@@ -287,3 +297,13 @@ Las contribuciones son bienvenidas. Por favor, abre un issue para discutir cambi
 ### Soporte
 
 Si encuentras algún problema o tienes sugerencias, por favor abre un issue en el repositorio de GitHub.
+
+### Agradecimientos
+
+Este proyecto es una aplicación complementaria para el receptor de radio **ATS Mini**, un increíble proyecto de código abierto de la comunidad ESP32-SI4732.
+
+**Receptor de Radio ATS Mini:**
+- 📻 [Documentación Oficial del ATS Mini](https://esp32-si4732.github.io/ats-mini/index.html)
+- 🔧 [Repositorio GitHub del ATS Mini](https://github.com/ESP32-SI4732/ATS-Mini)
+
+Agradecimientos especiales al equipo de desarrollo del ATS Mini por crear una plataforma de receptor de radio tan excelente y modificable. Esta aplicación no sería posible sin su destacado trabajo en el hardware y firmware.
