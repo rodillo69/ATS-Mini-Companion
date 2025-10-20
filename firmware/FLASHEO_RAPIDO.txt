@@ -1,0 +1,91 @@
+═══════════════════════════════════════════════════════════════
+    ATS MINI BLE v1.4 - FLASHEO RÁPIDO CON SPLASH SCREEN
+═══════════════════════════════════════════════════════════════
+
+📦 ARCHIVOS INCLUIDOS:
+----------------------
+✅ ats-mini.ino.merged.bin   - Firmware completo (16MB)
+✅ ATS-Mini-Companion-BLE.apk - App Android
+✅ ATS_LOGO.png               - Logo original (referencia)
+✅ CHECKSUMS.txt              - Verificación integridad
+📄 Documentación completa incluida
+
+═══════════════════════════════════════════════════════════════
+
+🚀 FLASHEO SIMPLE (UN SOLO COMANDO):
+-------------------------------------
+
+Mac/Linux:
+  esptool.py --chip esp32s3 --port /dev/cu.usbmodem101 \
+    --baud 921600 write_flash 0x0 ats-mini.ino.merged.bin
+
+Windows:
+  esptool.py --chip esp32s3 --port COM3 \
+    --baud 921600 write_flash 0x0 ats-mini.ino.merged.bin
+
+═══════════════════════════════════════════════════════════════
+
+✨ QUÉ INCLUYE ESTE FIRMWARE:
+-----------------------------
+✅ Splash screen personalizado (2 segundos al arrancar)
+✅ Bluetooth LE con Nordic UART Service
+✅ WiFi/BLE exclusión mutua automática
+✅ Logo embebido en firmware (no necesita SPIFFS)
+✅ Tamaño: 1.704.719 bytes (86% del espacio)
+
+═══════════════════════════════════════════════════════════════
+
+📱 INSTALAR APP ANDROID:
+------------------------
+1. Copiar ATS-Mini-Companion-BLE.apk al móvil
+2. Habilitar "Fuentes desconocidas" en Configuración
+3. Instalar el APK
+4. Otorgar permisos Bluetooth
+
+═══════════════════════════════════════════════════════════════
+
+🎯 ACTIVAR BLUETOOTH EN ATS MINI:
+----------------------------------
+1. Encender el dispositivo
+2. Ir a: Settings > Bluetooth
+3. Cambiar de OFF a Bluefruit
+4. Aparecerá como "ATS-Mini" en el escaneo BLE
+
+⚠️ NOTA: WiFi se desactiva automáticamente al activar BLE
+
+═══════════════════════════════════════════════════════════════
+
+🔌 CONECTAR DESDE LA APP:
+-------------------------
+1. Abrir "ATS Mini Companion"
+2. Tap en tab CONNECT
+3. Seleccionar "Bluetooth LE"
+4. Tap "CONNECT TO ATS MINI"
+5. Seleccionar "ATS-Mini" en el diálogo
+6. ✅ ¡Conectado!
+
+═══════════════════════════════════════════════════════════════
+
+✅ VERIFICACIÓN:
+----------------
+SHA256 Firmware:
+0a1aef7025f8767710489a389ccc809f4fac72e5a509801ff5bc6e3422dcf2e5
+
+SHA256 APK:
+4d8f261ba9ea3974c5fef2f30751bc800e3c4121d00d89a9d4c64a62e3266580
+
+═══════════════════════════════════════════════════════════════
+
+📞 SOPORTE:
+-----------
+- Ver INSTRUCCIONES_FLASHEO.md para guía detallada
+- Ver NOTAS_VERSION.md para historial de cambios
+- Ver BLUETOOTH_IMPLEMENTATION.md para detalles técnicos
+
+Firmware original: https://github.com/esp32-si4732/ats-mini
+Desarrollador: EA5IYR - Miguel Cañadas
+
+═══════════════════════════════════════════════════════════════
+
+¡Disfruta tu ATS Mini personalizado con Bluetooth! 📻🔵
+
