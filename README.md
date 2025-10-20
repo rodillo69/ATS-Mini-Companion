@@ -65,21 +65,73 @@ ATS Mini Companion is an Android application developed with React, Vite, and Cap
 
 #### 2. Flash Bluetooth-Enabled Firmware (Required for BLE)
 
-To use Bluetooth, you need to flash the ATS Mini with the included firmware:
+To use Bluetooth, you need to flash the ATS Mini with the included firmware v1.4.
 
+**⚠️ Warning:** Flashing firmware can make your receiver unusable if done incorrectly. Make sure you understand the process before proceeding.
+
+##### Firmware Files
+
+The `firmware/` folder contains:
+- `ats-mini.ino.bootloader.bin` - Bootloader (flash at **0x0**)
+- `ats-mini.ino.partitions.bin` - Partition table (flash at **0x8000**)
+- `ats-mini.ino.bin` - Firmware (flash at **0x10000**)
+- `ats-mini.ino.merged.bin` - All-in-one file (flash at **0x0**) ⭐ **Recommended**
+
+Choose **one** of the following methods:
+
+##### Method 1: Web Browser (Easiest - Chrome/Edge only)
+
+1. Open https://espressif.github.io/esptool-js/
+2. Connect your ATS Mini via USB and power it on
+3. Click "Connect" and select the serial port
+4. Add `firmware/ats-mini.ino.merged.bin` at address **0x0**
+5. Click "Program"
+6. Wait for "Leaving... Hard resetting via RTS pin..."
+7. Click "Disconnect" and power cycle the receiver
+
+##### Method 2: ESP Flash Download Tool (Windows)
+
+1. Download [Flash Download Tool](https://docs.espressif.com/projects/esp-test-tools/en/latest/esp32/production_stage/tools/flash_download_tool.html)
+2. Run the tool and select:
+   - Chip Type: **ESP32-S3**
+   - WorkMode: **Develop**
+   - LoadMode: **UART**
+3. Add firmware file:
+   - Check the box next to the file input
+   - Select `firmware/ats-mini.ino.merged.bin`
+   - Set address: **0x0**
+4. Select your COM port and click "START"
+5. Wait for "Finish" message
+
+##### Method 3: esptool.py (Mac/Linux/Windows)
+
+**Mac/Linux:**
 ```bash
-# Connect ESP32-S3 in bootloader mode (BOOT + RESET)
+# Install esptool
+pip install esptool
+
+# Flash merged firmware (recommended)
 esptool.py --chip esp32s3 --port /dev/cu.usbmodem101 \
   --baud 921600 write_flash 0x0 firmware/ats-mini.ino.merged.bin
+
+# OR flash separate files
+esptool.py --chip esp32s3 --port /dev/cu.usbmodem101 \
+  --baud 921600 write_flash \
+  0x0 firmware/ats-mini.ino.bootloader.bin \
+  0x8000 firmware/ats-mini.ino.partitions.bin \
+  0x10000 firmware/ats-mini.ino.bin
 ```
 
 **Windows:**
 ```bash
+# Replace COM3 with your port
 esptool.py --chip esp32s3 --port COM3 \
   --baud 921600 write_flash 0x0 firmware/ats-mini.ino.merged.bin
 ```
 
-For detailed flashing instructions, see [firmware/INSTRUCCIONES_FLASHEO.md](firmware/INSTRUCCIONES_FLASHEO.md)
+**Note:** On macOS, the port looks like `/dev/tty.usbmodemXXXX`, on Linux like `/dev/ttyACMX`
+
+For complete flashing instructions, see [firmware/INSTRUCCIONES_FLASHEO.md](firmware/INSTRUCCIONES_FLASHEO.md)
 
 ### Usage
 
@@ -314,21 +366,73 @@ ATS Mini Companion es una aplicación Android desarrollada con React, Vite y Cap
 
 #### 2. Flashear Firmware con Bluetooth (Requerido para BLE)
 
-Para usar Bluetooth, necesitas flashear el ATS Mini con el firmware incluido:
+Para usar Bluetooth, necesitas flashear el ATS Mini con el firmware v1.4 incluido.
 
+**⚠️ Advertencia:** Flashear firmware puede inutilizar tu receptor si se hace incorrectamente. Asegúrate de entender el proceso antes de proceder.
+
+##### Archivos de Firmware
+
+La carpeta `firmware/` contiene:
+- `ats-mini.ino.bootloader.bin` - Bootloader (flashear en **0x0**)
+- `ats-mini.ino.partitions.bin` - Tabla de particiones (flashear en **0x8000**)
+- `ats-mini.ino.bin` - Firmware (flashear en **0x10000**)
+- `ats-mini.ino.merged.bin` - Archivo todo-en-uno (flashear en **0x0**) ⭐ **Recomendado**
+
+Elige **uno** de los siguientes métodos:
+
+##### Método 1: Navegador Web (Más fácil - Solo Chrome/Edge)
+
+1. Abre https://espressif.github.io/esptool-js/
+2. Conecta tu ATS Mini por USB y enciéndelo
+3. Haz clic en "Connect" y selecciona el puerto serial
+4. Añade `firmware/ats-mini.ino.merged.bin` en dirección **0x0**
+5. Haz clic en "Program"
+6. Espera "Leaving... Hard resetting via RTS pin..."
+7. Haz clic en "Disconnect" y reinicia el receptor
+
+##### Método 2: ESP Flash Download Tool (Windows)
+
+1. Descarga [Flash Download Tool](https://docs.espressif.com/projects/esp-test-tools/en/latest/esp32/production_stage/tools/flash_download_tool.html)
+2. Ejecuta la herramienta y selecciona:
+   - Chip Type: **ESP32-S3**
+   - WorkMode: **Develop**
+   - LoadMode: **UART**
+3. Añade el archivo de firmware:
+   - Marca la casilla junto a la entrada de archivo
+   - Selecciona `firmware/ats-mini.ino.merged.bin`
+   - Configura dirección: **0x0**
+4. Selecciona tu puerto COM y haz clic en "START"
+5. Espera el mensaje "Finish"
+
+##### Método 3: esptool.py (Mac/Linux/Windows)
+
+**Mac/Linux:**
 ```bash
-# Conecta el ESP32-S3 en modo bootloader (BOOT + RESET)
+# Instalar esptool
+pip install esptool
+
+# Flashear firmware merged (recomendado)
 esptool.py --chip esp32s3 --port /dev/cu.usbmodem101 \
   --baud 921600 write_flash 0x0 firmware/ats-mini.ino.merged.bin
+
+# O flashear archivos separados
+esptool.py --chip esp32s3 --port /dev/cu.usbmodem101 \
+  --baud 921600 write_flash \
+  0x0 firmware/ats-mini.ino.bootloader.bin \
+  0x8000 firmware/ats-mini.ino.partitions.bin \
+  0x10000 firmware/ats-mini.ino.bin
 ```
 
 **Windows:**
 ```bash
+# Reemplaza COM3 con tu puerto
 esptool.py --chip esp32s3 --port COM3 \
   --baud 921600 write_flash 0x0 firmware/ats-mini.ino.merged.bin
 ```
 
-Para instrucciones detalladas de flasheo, ver [firmware/INSTRUCCIONES_FLASHEO.md](firmware/INSTRUCCIONES_FLASHEO.md)
+**Nota:** En macOS, el puerto se ve como `/dev/tty.usbmodemXXXX`, en Linux como `/dev/ttyACMX`
+
+Para instrucciones completas de flasheo, ver [firmware/INSTRUCCIONES_FLASHEO.md](firmware/INSTRUCCIONES_FLASHEO.md)
 
 ### Uso
 
